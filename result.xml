@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<policies>
+  <inbound>
+    <base/>
+    <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
+      <issuer-signing-keys>
+        <key>123412341234123412341234</key>
+      </issuer-signing-keys>
+      <required-claims>
+        <claim name="adminx" match="any">
+          <value>true</value>
+        </claim>
+      </required-claims>
+    </validate-jwt>
+    <set-header exists-action="override" name="username">
+      <value>@{
+        Jwt jwt;
+        context.Request.Headers.GetValueOrDefault("Authorization","scheme param").Split(' ').Last().TryParseJwt(out jwt);
+        return jwt.Claims.GetValueOrDefault("name", "?");
+    }</value>
+    </set-header>
+  </inbound>
+  <backend>
+    <base/>
+  </backend>
+  <outbound>
+    <base/>
+    <set-header exists-action="override" name="username">
+      <value>@{
+        foreach (var key in new[] { "hair_color", "skin_color", "eye_color", "gender" })
+        {
+            response.Property(key)?.Remove();
+        }
+
+        return response.ToString();
+    }</value>
+    </set-header>
+  </outbound>
+  <on-error>
+    <base/>
+  </on-error>
+</policies>
