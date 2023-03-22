@@ -13,10 +13,17 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('azure-apim-policy-combiner.helloWorld', () => {
+	let disposable = vscode.commands.registerCommand('azure-apim-policy-combiner.policyCombiner', async () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('lalalalal from Azure APIM Policy combiner!');
+		const uris = await vscode.window.showOpenDialog({ canSelectMany: true });
+        if (uris && uris.length === 2) {
+            // Combine the policies
+			vscode.window.showInformationMessage(`2 files selected: ${uris[0]}, ${uris[1]}`);
+            // ...
+        } else {
+            vscode.window.showInformationMessage('Please select two files to combine.');
+        }
 	});
 
 	context.subscriptions.push(disposable);

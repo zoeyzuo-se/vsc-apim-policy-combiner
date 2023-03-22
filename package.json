@@ -14,8 +14,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "azure-apim-policy-combiner.helloWorld",
-        "title": "Hello World"
+        "command": "azure-apim-policy-combiner.policyCombiner",
+        "title": "Policy combiner"
+      }
+    ],
+    "explorer/context": [
+      {
+          "command": "azure-apim-policy-combiner.policyCombiner"
       }
     ]
   },
