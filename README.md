@@ -41,3 +41,7 @@ With this extension, you can write your C# code in a more readable and maintaina
 
 ## Contributing
 Contributions to the Azure API Management Policy Combiner extension are always welcome. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you would like to contribute code, please fork the repository and submit a pull request with your changes.
+
+## Links
+
+This extension is built on top of [Combiner](https://github.com/zoeyzuo-se/Combiner)
