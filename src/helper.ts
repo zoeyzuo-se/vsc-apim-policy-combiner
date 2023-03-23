@@ -12,8 +12,11 @@ export async function combiner(xmlPath: string, csPath: string): Promise<string>
         if(isCsharpPath(value)) {
             const fileName = csPath;
             const methodName = getMethodName(value);
-            const code = `@{` + getCode(fileName, methodName) + `}`;
-            updateValueByLocator(xmlObject,loc,code);
+            let code = getCode(fileName, methodName);
+            if (code) {
+              code = `@{` + code + `}`;
+              updateValueByLocator(xmlObject,loc,code);
+            }
         }
         return value;
       });
@@ -21,11 +24,7 @@ export async function combiner(xmlPath: string, csPath: string): Promise<string>
     // Convert the XML object back to an XML string
     const builder = new xml2js.Builder();
     const combinedXmlString = builder.buildObject(xmlObject);
-
     return combinedXmlString;
-
-    // Write the combined XML to a file
-    // fs.writeFileSync('./result.xml', combinedXmlString);
 }
 
 function getCode(fileName: string, methodName: string ) {
@@ -33,11 +32,9 @@ function getCode(fileName: string, methodName: string ) {
     // Extract the method code
     const methodRegex = new RegExp(`(?<=\\b${methodName}\\b\\s*\\([^)]*\\)\\s*\\{)[^{}]*(?:\\{[^{}]*\\}[^{}]*)*(?=})`);
     const methodMatch = csharpCode.match(methodRegex);
-    console.log(methodMatch[0]);
 
     if (!methodMatch) {
         console.error(`Method "${methodName}" not found in file "${fileName}"`);
-        process.exit(1);
       }
     return methodMatch ? methodMatch[0] : null;
 }
@@ -77,7 +74,7 @@ export async function generateLocators(xmlObject: any): Promise<string[]> {
       return locators;
   }
 
-// tested
+
 function getValueByLocator(xmlObject: XmlNode, locator: string): any {
     if (!xmlObject) {
       return undefined;
@@ -146,17 +143,12 @@ function isCsharpPath(value: string): boolean {
     return value.startsWith('@{') && value.endsWith('}');
 }
 
-// function getFilePath(value: string): string {
-//     var fileNameMethod = value.replace('@{','');
-//     fileNameMethod = fileNameMethod.replace('}', '');
-//     return fileNameMethod.split(' ')[0];
-// }
-
 function getMethodName(value: string): string {
     var fileNameMethod = value.replace('@{','');
     fileNameMethod = fileNameMethod.replace('}', '');
-    return fileNameMethod.split(' ')[1];
+    return fileNameMethod;
 }
+
 export async function generateXmlObj(absoluteFilePath: string) {
     const xmlString = fs.readFileSync(require.resolve(absoluteFilePath), 'utf-8');
     return await xml2js.parseStringPromise(xmlString);

@@ -18,6 +18,26 @@ With this extension, you can write your C# code in a more readable and maintaina
 
 - Supports various policy files in one project.
 
+## Demo
+
+:eyes: Normally our Azure APIM Policy xml file would look like this. With c# code in the middle of xml file which can not be tested and debug.
+![original-xml](./demo/original-policy.png)
+
+:one: Now write your policy pain free like this. Referencing the code you want by specifying the method name
+![input-xml](./demo/input-xml.png)
+
+:two: Then write in a proper c# file where you can test and debug 
+![input-csharp](./demo/input-csharp.png)
+
+:trophy: Merge them using the awsome combiner
+![output](./demo/output.png)
+
+It's worth noting that the yellow box remains the same between :one: and :trophy:, that's because 
+
+a. the value is not in `@{}` hence will not be treated as a method name
+
+b. the mathod does not existing in the selected c# file.
+
 ## Installation
 - Open Visual Studio Code.
 

@@ -1,0 +1,33 @@
+<policies>
+	<inbound>
+		<base />
+		<validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized">
+			<issuer-signing-keys>
+				<key>123412341234123412341234</key>
+			</issuer-signing-keys>
+			<required-claims>
+				<claim name="adminx" match="any">
+					<value>true</value>
+				</claim>
+			</required-claims>
+		</validate-jwt>
+		<set-header exists-action="override" name="username">
+			<value>@{retrieveJWT}</value>
+		</set-header>
+	</inbound>
+	<backend>
+		<base />
+	</backend>
+	<outbound>
+		<base />
+		<set-header exists-action="override" name="username">
+			<value>@{RemoveSensitiveData}</value>
+		</set-header>
+        <set-header exists-action="override" name="username">
+			<value>@{NonExistingMethod}</value>
+		</set-header>
+	</outbound>
+	<on-error>
+		<base />
+	</on-error>
+</policies>
