@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// Display a message box to the user
 		const uris = await vscode.window.showOpenDialog({ canSelectMany: true });
 		// var resultLocation = <any>vscode.workspace.workspaceFolders?.[0].uri.path;
-		var resultLocation = undefined;
+		var resultLocation = <any>vscode.workspace.workspaceFolders?.[0].uri.path || undefined;
 		// console.log(rootPath)
         if (uris && uris.length === 2) {
             // Combine the policies
