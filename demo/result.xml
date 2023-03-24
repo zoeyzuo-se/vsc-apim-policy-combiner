@@ -35,9 +35,6 @@
         return response.ToString();
     }</value>
     </set-header>
-    <set-header exists-action="override" name="username">
-      <value>@{NonExistingMethod}</value>
-    </set-header>
   </outbound>
   <on-error>
     <base/>
