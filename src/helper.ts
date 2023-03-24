@@ -1,7 +1,5 @@
-import { Uri } from "vscode";
-
-const fs = require('fs');
-const xml2js = require('xml2js');
+import * as fs from 'fs';
+import * as xml2js from 'xml2js';
 
 
 export async function combiner(xmlPath: string, csPath: string): Promise<string> {
