@@ -19,20 +19,18 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		const uris = await vscode.window.showOpenDialog({ canSelectMany: true });
-		// var resultLocation = <any>vscode.workspace.workspaceFolders?.[0].uri.path;
-		var resultLocation = <any>vscode.workspace.workspaceFolders?.[0].uri.path || undefined;
-		// console.log(rootPath)
+		var resultLocation = <any>vscode.workspace.workspaceFolders?.[0].uri.fsPath || undefined;
         if (uris && uris.length === 2) {
             // Combine the policies
 			vscode.window.showInformationMessage(`2 files selected: ${uris[0]}, ${uris[1]}`);
 			var csPath = '';
 			var xmlPath = '';
-			if(uris[0].path.endsWith('.cs') && uris[1].path.endsWith('.xml')){
-				csPath = uris[0].path;
-				xmlPath = uris[1].path;
-			} else if(uris[0].path.endsWith('.xml') && uris[1].path.endsWith('.cs')){
-				csPath = uris[1].path;
-				xmlPath = uris[0].path;
+			if(uris[0].fsPath.endsWith('.cs') && uris[1].fsPath.endsWith('.xml')){
+				csPath = uris[0].fsPath;
+				xmlPath = uris[1].fsPath;
+			} else if(uris[0].fsPath.endsWith('.xml') && uris[1].fsPath.endsWith('.cs')){
+				csPath = uris[1].fsPath;
+				xmlPath = uris[0].fsPath;
 			} else {
 				vscode.window.showInformationMessage('Please select one c# file and one xml file');
 			}
@@ -45,7 +43,7 @@ export function activate(context: vscode.ExtensionContext) {
 					canSelectFolders: true,
 					canSelectMany: false,
 				});
-				resultLocation = resultLocationUri?.[0].path;
+				resultLocation = resultLocationUri?.[0].fsPath;
 			}
 			if(!resultLocation) {
 				vscode.window.showErrorMessage('Please select a location to store the result file');
