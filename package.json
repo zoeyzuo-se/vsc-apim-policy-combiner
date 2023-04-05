@@ -9,8 +9,13 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:azure-apim-policy-combiner.policyCombiner"
+  ],
   "main": "./out/extension.js",
+  "commands": {
+    "azure-apim-policy-combiner.policyCombiner": "./out/extension"
+  },
   "contributes": {
     "commands": [
       {
@@ -18,11 +23,15 @@
         "title": "Policy combiner"
       }
     ],
-    "explorer/context": [
-      {
-        "command": "azure-apim-policy-combiner.policyCombiner"
-      }
-    ]
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "azure-apim-policy-combiner.policyCombiner",
+          "when": "explorerResourceIsFolder"
+        }
+      ]
+    }
+    
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -47,6 +56,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "apim-policy-transformer": "../apim-policy-transformer",
     "fs": "^0.0.1-security",
     "xml2js": "^0.4.23"
   }

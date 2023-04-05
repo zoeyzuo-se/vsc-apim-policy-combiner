@@ -275,6 +275,12 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
+apim-policy-transformer@../apim-policy-transformer:
+  version "0.0.2-dev"
+  dependencies:
+    fs "^0.0.1-security"
+    xml2js "^0.4.23"
+
 argparse@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
