@@ -1,6 +1,6 @@
 {
-  "name": "azure-apim-policy-combiner",
-  "displayName": "Azure APIM Policy combiner",
+  "name": "vsc-apim-policy-transformer",
+  "displayName": "Azure APIM Policy transformer",
   "description": "Allow users to write c# code in their compilable environment and load that into policy xml file after it has been tested",
   "version": "0.0.1",
   "engines": {
@@ -9,29 +9,59 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:azure-apim-policy-combiner.policyCombiner"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "commands": {
-    "azure-apim-policy-combiner.policyCombiner": "./out/extension"
+    "vsc-apim-policy-transformer.policyCombiner": "./out/extension",
+    "vsc-apim-policy-transformer.policyExtractor": "./out/extension",
+    "vsc-apim-policy-transformer.combineFromDirectory": "./out/extension",
+    "vsc-apim-policy-transformer.extractFromDirectory": "./out/extension"
   },
   "contributes": {
     "commands": [
       {
-        "command": "azure-apim-policy-combiner.policyCombiner",
-        "title": "Policy combiner"
+        "command": "vsc-apim-policy-transformer.policyCombiner",
+        "title": "Policy Combiner"
+      },
+      {
+        "command": "vsc-apim-policy-transformer.policyExtractor",
+        "title": "Policy Extractor"
+      },
+      {
+        "command": "vsc-apim-policy-transformer.combineFromDirectory",
+        "title": "Combine Policies",
+        "arguments": [
+          {
+            "type": "uri",
+            "name": "uri",
+            "description": "The URI of the folder that was right-clicked"
+          }
+        ]
+      },
+      {
+        "command": "vsc-apim-policy-transformer.extractFromDirectory",
+        "title": "Extract Policies",
+        "arguments": [
+          {
+            "type": "uri",
+            "name": "uri",
+            "description": "The URI of the folder that was right-clicked"
+          }
+        ]
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "azure-apim-policy-combiner.policyCombiner",
+          "command": "vsc-apim-policy-transformer.combineFromDirectory",
+          "when": "explorerResourceIsFolder"
+        },
+        {
+          "command": "vsc-apim-policy-transformer.extractFromDirectory",
           "when": "explorerResourceIsFolder"
         }
       ]
     }
-    
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
