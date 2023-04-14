@@ -51,7 +51,7 @@ You can also use the VS Code command palette to run the "Extract Policies" or "C
 
 Open the Command Palette by pressing Ctrl+Shift+P (Windows, Linux) or Cmd+Shift+P (macOS).
 
-Type "Extract Policies" or "Combine Policies" and select the appropriate command from the list.
+Type `Policy Combiner` or `Policy Extractor` and select the appropriate command from the list.
 
 ### Using shortcuts[TODO]
 Alternatively, you can use the following keyboard shortcuts:
