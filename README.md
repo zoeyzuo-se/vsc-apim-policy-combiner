@@ -53,11 +53,5 @@ Open the Command Palette by pressing Ctrl+Shift+P (Windows, Linux) or Cmd+Shift+
 
 Type `Policy Combiner` or `Policy Extractor` and select the appropriate command from the list.
 
-### Using shortcuts[TODO]
-Alternatively, you can use the following keyboard shortcuts:
-
-Extract Policies: ctrl+shift+e (Windows/Linux) or cmd+shift+e (macOS)
-Combine Policies: ctrl+shift+c (Windows/Linux) or cmd+shift+c (macOS)
-
 ## 📜 License
 This project is licensed under the MIT License.
