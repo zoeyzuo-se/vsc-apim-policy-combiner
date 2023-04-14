@@ -275,9 +275,13 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apim-policy-transformer@../apim-policy-transformer:
-  version "0.0.2-dev"
+apim-policy-transformer@^0.0.5-dev:
+  version "0.0.5-dev"
+  resolved "https://registry.yarnpkg.com/apim-policy-transformer/-/apim-policy-transformer-0.0.5-dev.tgz#0088c98768ae08ce3c7823c86f8fbd8349de4500"
+  integrity sha512-hndQ2b63skpq11qKePUhHEe1Mn7Bd5WPdsNs7uQ9UuV/z9liskAiUjBurYvvXF2F2mrMVOXW711fgFJXQlgsyw==
   dependencies:
+    commander "^10.0.0"
+    figlet "^1.6.0"
     fs "^0.0.1-security"
     xml2js "^0.4.23"
 
@@ -381,6 +385,11 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+commander@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-10.0.0.tgz#71797971162cd3cf65f0b9d24eb28f8d303acdf1"
+  integrity sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -594,6 +603,11 @@ fastq@^1.6.0:
   integrity sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==
   dependencies:
     reusify "^1.0.4"
+
+figlet@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/figlet/-/figlet-1.6.0.tgz#812050fa9f01043b4d44ddeb11f20fb268fa4b93"
+  integrity sha512-31EQGhCEITv6+hi2ORRPyn3bulaV9Fl4xOdR169cBzH/n1UqcxsiSB/noo6SJdD7Kfb1Ljit+IgR1USvF/XbdA==
 
 file-entry-cache@^6.0.1:
   version "6.0.1"

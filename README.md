@@ -1,67 +1,63 @@
-# Azure API Management Policy Combiner Extension
-## Overview
+# 🚀 APIM Policy Transformer Extension for Visual Studio Code
+The APIM Policy Transformer Extension for Visual Studio Code provides a quick and easy way to extract and combine Azure API Management (APIM) policies directly within the editor.
 
-The Azure API Management Policy Combiner extension for Visual Studio Code allows you to write complex C# code in a separate file and reference it within your policy XML files, simplifying the process of writing API management policies.
+## 🔧 Installation
+You can install the extension directly from the Visual Studio Code marketplace.
 
-Normally, policy code is written in a syntax resembling C# in the @{ } block in the policy XML file. This approach can be challenging, as syntax highlighting is not always reliable and there is no built-in way to debug C# code in the policy file. The Azure API Management Policy Combiner extension solves these issues by allowing you to write the C# code in a separate file, in a method, and then referencing that method within your policy file.
+## 📦 Features
+The extension provides two commands:
 
-With this extension, you can write your C# code in a more readable and maintainable format, making it easier to create and maintain complex policies.
+1. Extract Policies - Extracts inline policies and policy sets from XML files in a directory and generates .csx files for each policy.
 
-## Features
-- Allows you to write your policy code in a separate C# file in a method.
+2. Combine Policies - Combines the extracted .csx files from subdirectories of a given directory into a single .csx file.
 
-- Provides easy integration with the policy XML file. You only need to specify the method name in the XML file, and the extension will automatically insert the C# code in the correct place in the policy file.
+## 📂 Folder Structure
+### Extract Policies
+Please use a directory path that contains all the policy files. The directory structure should look like this:
 
-- Enables syntax highlighting and debugging of C# code in the separate file, improving code quality and reducing errors.
+```
+.
+├── policies
+|   ├── policy1.xml
+|   ├── policy2.xml
+|   └── policy3.xml
+```
 
-- Generates the final XML file with the C# code correctly inserted in the policy file, ensuring a seamless and error-free process.
+### Combine Policies
+Please use a directory path that contains subdirectories with generated `.csx` files from the `Extract Policies` command. The directory structure should look like this:
 
-- Supports various policy files in one project.
+```
+.
+├── scripts
+|   ├── subfolder1
+|   |   ├── block-001.csx
+|   |   ├── inline-001.csx
+|   |   ├── replaced.xml
+|   |   ├── context.csx
+|   |   └── context.json
+|   ├── subfolder2
+|   |   ├── block-001.csx
+|   |   ├── inline-001.csx
+|   |   ├── replaced.xml
+|   |   ├── context.csx
+|   |   └── context.json
+```
 
-## Demo
+## 📝 Usage
+### Using the Right-Click Menu
+To use the extension, simply right-click on a folder in the Explorer view and select either Extract Policies or Combine Policies from the context menu.
+### Using the Command Palette
+You can also use the VS Code command palette to run the "Extract Policies" or "Combine Policies" command.
 
-:eyes: Normally our Azure APIM Policy xml file would look like this. With c# code in the middle of xml file which can not be tested and debug.
-![original-xml](./demo/original-policy.png)
+Open the Command Palette by pressing Ctrl+Shift+P (Windows, Linux) or Cmd+Shift+P (macOS).
 
-:one: Now write your policy pain free like this. Referencing the code you want by specifying the method name
-![input-xml](./demo/input-xml.png)
+Type "Extract Policies" or "Combine Policies" and select the appropriate command from the list.
 
-:two: Then write in a proper c# file where you can test and debug 
-![input-csharp](./demo/input-csharp.png)
+### Using shortcuts[TODO]
+Alternatively, you can use the following keyboard shortcuts:
 
-:trophy: Merge them using the awsome combiner
-![output](./demo/output.png)
+Extract Policies: ctrl+shift+e (Windows/Linux) or cmd+shift+e (macOS)
+Combine Policies: ctrl+shift+c (Windows/Linux) or cmd+shift+c (macOS)
 
-It's worth noting that the yellow box remains the same between :one: and :trophy:, that's because 
-
-a. the value is not in `@{}` hence will not be treated as a method name
-
-b. the mathod does not existing in the selected c# file.
-
-## Installation
-- Open Visual Studio Code.
-
-- Open the Extensions sidebar by pressing `Ctrl+Shift+X` or `Cmd+Shift+X` on macOS.
-
-- Search for "Azure API Management Policy Combiner" and click install.
-
-- Restart Visual Studio Code.
-
-## Usage
-1. Create a C# file that contains your policy code. You can use any file name and location that suits your needs.
-2. Write your C# code in a method inside the file, e.g. MyMethod.
-3. In the policy XML file, replace the @{ } block with the method name, e.g. MyMethod().
-4. Save the policy XML file.
-5. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
-6. Search for "Policy Combiner" and select it.
-7. It will ask you to choose 2 files. One c# file and the other xml file.
-8. The extension will generate the final XML file with the C# code correctly inserted in the policy file.
-9. If you are not in a workspace, the extension will ask where would you like to store the file.
-10. Choose a location and save the file.
-
-## Contributing
-Contributions to the Azure API Management Policy Combiner extension are always welcome. If you find a bug or have a feature request, please open an issue on the GitHub repository. If you would like to contribute code, please fork the repository and submit a pull request with your changes.
-
-## Links
-
-This extension is built on top of [Combiner](https://github.com/zoeyzuo-se/Combiner)
+## 📜 License
+This project is licensed under the MIT License.

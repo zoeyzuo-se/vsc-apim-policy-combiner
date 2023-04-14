@@ -70,6 +70,9 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(policyCombiner);
+	context.subscriptions.push(policyExtractor);
+	context.subscriptions.push(combinePolicyFromDirectory);
+	context.subscriptions.push(extractPolicyFromDirectory);
 }
 
 // This method is called when your extension is deactivated
