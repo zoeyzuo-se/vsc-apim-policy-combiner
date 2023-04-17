@@ -6,11 +6,16 @@
   "engines": {
     "vscode": "^1.76.0"
   },
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/zoeyzuo-se/vsc-apim-policy-transformer"
   },
   "publisher": "yuruzuo",
+  "author": {
+    "name": "Yuru Zuo",
+    "email": "zoeyzuouk@gmail.com"
+  },
   "categories": [
     "Other"
   ],

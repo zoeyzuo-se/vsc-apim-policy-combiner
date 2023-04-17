@@ -1,5 +1,6 @@
 # 🚀 APIM Policy Transformer Extension for Visual Studio Code
-![icon-png](./images/icon.png)
+<img src="https://raw.githubusercontent.com/zoeyzuo-se/vsc-apim-policy-transformer/main/images/icon.png">
+
 The APIM Policy Transformer Extension for Visual Studio Code provides a quick and easy way to extract and combine Azure API Management (APIM) policies directly within the editor.
 
 ## 🔧 Installation
