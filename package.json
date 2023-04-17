@@ -6,6 +6,11 @@
   "engines": {
     "vscode": "^1.76.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zoeyzuo-se/vsc-apim-policy-transformer"
+  },
+  "publisher": "yuruzuo",
   "categories": [
     "Other"
   ],
@@ -89,6 +94,8 @@
   "dependencies": {
     "apim-policy-transformer": "^0.0.5-dev",
     "fs": "^0.0.1-security",
+    "global": "^4.4.0",
+    "vsce": "^2.15.0",
     "xml2js": "^0.4.23"
   }
 }
