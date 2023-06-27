@@ -97,7 +97,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "apim-policy-transformer": "^0.0.5-dev",
+    "apim-policy-transformer": "1.0.0",
     "fs": "^0.0.1-security",
     "global": "^4.4.0",
     "vsce": "^2.15.0",
