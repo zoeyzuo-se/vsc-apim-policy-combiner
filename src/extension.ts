@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-const path = require('path');
-const transformer = require('apim-policy-transformer');
+import * as path from 'path';
+import transformer from 'apim-policy-transformer';
 
 export function activate(context: vscode.ExtensionContext) {
     let policyCombiner = vscode.commands.registerCommand('vsc-apim-policy-transformer.policyCombiner', async () => {

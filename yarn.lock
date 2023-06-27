@@ -79,6 +79,11 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@types/figlet@^1.5.6":
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/@types/figlet/-/figlet-1.5.6.tgz#fd6e71c48ffa83953aaf401c8ff179c2a5fabc9f"
+  integrity sha512-AOdn9cKJGXpqfHeif16xeGMwWefB4nsOyxkdRMpc+PEP3nUxzu3psJfIqhjrCNW4Sejt5i6rISWmEwK0sw03mA==
+
 "@types/glob@^8.1.0":
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/@types/glob/-/glob-8.1.0.tgz#b63e70155391b0584dce44e7ea25190bbc38f2fc"
@@ -282,10 +287,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apim-policy-transformer@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/apim-policy-transformer/-/apim-policy-transformer-1.0.0.tgz#576954024ed70683788e120f2ded3a40724c86cd"
-  integrity sha512-8MoYe4o3Ncd8Lz2mIcXyD7Y7NlqQ7ZSjMoug+ii5SGYOzRCnzSv5x3930EDIZikHAImJaxcOAQDAUb0h4XR8Hg==
+apim-policy-transformer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/apim-policy-transformer/-/apim-policy-transformer-1.0.1.tgz#bc7adaba4b1bf96cf5394f720505c2c8bac27ff4"
+  integrity sha512-o1hLvH2VIOAfBeZdCvxycJFdqkHLEsBkn/dH+HqZ87vjlWLf4Ye4h/N1INERw6SxxwhQ27cGr+xvjMrg1n4oyA==
   dependencies:
     commander "^10.0.0"
     figlet "^1.6.0"
