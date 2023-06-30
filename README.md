@@ -1,5 +1,8 @@
 # 🚀 APIM Policy Transformer Extension for Visual Studio Code
-<img src="https://raw.githubusercontent.com/zoeyzuo-se/vsc-apim-policy-transformer/main/images/icon.png">
+<div style="text-align: center;">
+  <img src="https://raw.githubusercontent.com/zoeyzuo-se/vsc-apim-policy-transformer/main/images/icon.png" alt="Image">
+</div>
+
 
 The APIM Policy Transformer Extension for Visual Studio Code provides a quick and easy way to extract and combine Azure API Management (APIM) policies directly within the editor.
 
@@ -12,6 +15,30 @@ The extension provides two commands:
 1. Extract Policies - Extracts inline policies and policy sets from XML files in a directory and generates .csx files for each policy.
 
 2. Combine Policies - Combines the extracted .csx files from subdirectories of a given directory into a single .csx file.
+
+## 📝 Usage
+### Using the Right-Click Menu
+To use the extension, simply right-click on a folder in the Explorer view and select either Extract Policies or Combine Policies from the context menu.
+
+![pcombine-extract-rightclick](./images/combine-extract-rightclick.png)
+
+![extract-gif](./images/extract.gif)
+
+![combine-gif](./images/combine.gif)
+
+### Using the Command Palette
+You can also use the VS Code command palette to run the "Extract Policies" or "Combine Policies" command.
+
+Open the Command Palette by pressing Ctrl+Shift+P (Windows, Linux) or Cmd+Shift+P (macOS).
+
+Type `Policy Combiner` or `Policy Extractor` and select the appropriate command from the list.
+
+![policy-combiner-extractor.drawio](./images/policy-combiner-extractor.drawio.png)
+
+![extractor-gif](./images/extractor.gif)
+
+![combiner-gif](./images/combiner.gif)
+
 
 ## 📂 Folder Structure
 ### Extract Policies
@@ -45,15 +72,7 @@ Please use a directory path that contains subdirectories with generated `.csx` f
 |   |   └── context.json
 ```
 
-## 📝 Usage
-### Using the Right-Click Menu
-To use the extension, simply right-click on a folder in the Explorer view and select either Extract Policies or Combine Policies from the context menu.
-### Using the Command Palette
-You can also use the VS Code command palette to run the "Extract Policies" or "Combine Policies" command.
 
-Open the Command Palette by pressing Ctrl+Shift+P (Windows, Linux) or Cmd+Shift+P (macOS).
-
-Type `Policy Combiner` or `Policy Extractor` and select the appropriate command from the list.
 
 ## 📜 License
 This project is licensed under the MIT License.
