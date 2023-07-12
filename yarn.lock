@@ -287,10 +287,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apim-policy-transformer@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/apim-policy-transformer/-/apim-policy-transformer-1.0.1.tgz#bc7adaba4b1bf96cf5394f720505c2c8bac27ff4"
-  integrity sha512-o1hLvH2VIOAfBeZdCvxycJFdqkHLEsBkn/dH+HqZ87vjlWLf4Ye4h/N1INERw6SxxwhQ27cGr+xvjMrg1n4oyA==
+apim-policy-utils@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/apim-policy-utils/-/apim-policy-utils-0.0.1.tgz#b7aa4d44b94b2741917cdc56b19bb43fd98f99fd"
+  integrity sha512-oeqJcFlUA0F4OQWM3pJhM4yflDkgF2PclyX0S5WY1WkNawYU5zIZWjPT3yccd+WXdo3CG7SWiYa2uvAXMDuDLw==
   dependencies:
     commander "^10.0.0"
     figlet "^1.6.0"

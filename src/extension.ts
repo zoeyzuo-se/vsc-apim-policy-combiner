@@ -1,9 +1,9 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
-import transformer from 'apim-policy-transformer';
+import utils from 'apim-policy-utils';
 
 export function activate(context: vscode.ExtensionContext) {
-    let policyCombiner = vscode.commands.registerCommand('vsc-apim-policy-transformer.policyCombiner', async () => {
+    let policyCombiner = vscode.commands.registerCommand('vsc-apim-policy-utils.policyCombiner', async () => {
         const uri = await vscode.window.showOpenDialog({
             canSelectMany: false,
             canSelectFiles: false,
@@ -12,14 +12,14 @@ export function activate(context: vscode.ExtensionContext) {
         let dir = uri?.[0].fsPath;
         if (dir) {
             // Combine the policies
-            transformer.combiner(dir);
+            utils.combiner(dir);
             vscode.window.showInformationMessage(`Combine finished`);
         } else {
             vscode.window.showInformationMessage('Please select only one directory');
         }
     });
 
-    let policyExtractor = vscode.commands.registerCommand('vsc-apim-policy-transformer.policyExtractor', async () => {
+    let policyExtractor = vscode.commands.registerCommand('vsc-apim-policy-utils.policyExtractor', async () => {
         const uri = await vscode.window.showOpenDialog({
             canSelectMany: false,
             canSelectFiles: false,
@@ -27,16 +27,16 @@ export function activate(context: vscode.ExtensionContext) {
         });
         let dir = uri?.[0].fsPath;
         if (dir) {
-            transformer.extractor(dir);
+            utils.extractor(dir);
             vscode.window.showInformationMessage(`Extract finished`);
         } else {
             vscode.window.showInformationMessage('Please select only one directory');
         }
     });
 
-    let combinePolicyFromDirectory = vscode.commands.registerCommand('vsc-apim-policy-transformer.combineFromDirectory', async (uri) => {
+    let combinePolicyFromDirectory = vscode.commands.registerCommand('vsc-apim-policy-utils.combineFromDirectory', async (uri) => {
         if (uri && uri.scheme === 'file' && uri.fsPath && !path.basename(uri.fsPath).includes('.')) {
-            transformer.combiner(uri.fsPath);
+            utils.combiner(uri.fsPath);
             vscode.window.showInformationMessage(`Combine finished`);
 		  }
 		  else {
@@ -44,9 +44,9 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    let extractPolicyFromDirectory = vscode.commands.registerCommand('vsc-apim-policy-transformer.extractFromDirectory', async (uri) => {
+    let extractPolicyFromDirectory = vscode.commands.registerCommand('vsc-apim-policy-utils.extractFromDirectory', async (uri) => {
         if (uri && uri.scheme === 'file' && uri.fsPath && !path.basename(uri.fsPath).includes('.')) {
-            transformer.extractor(uri.fsPath);
+            utils.extractor(uri.fsPath);
             vscode.window.showInformationMessage(`Extract finished`);
 		  } else {
             vscode.window.showInformationMessage('Having trouble locating the directory');
